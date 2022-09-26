@@ -1,0 +1,64 @@
+@import "utilities/otros";
+
+
+//BOTONES 
+
+
+#botonLeer{
+    padding: 5px 22px;
+    background-color: #ffc800;
+    color:#ffffff;
+    border-radius: 1.2rem;
+    border: none;
+    font-size:1rem;
+    text-decoration: none;
+    @include border-box;
+    &:hover{
+        background-color: #f3582b;
+        transform: scale(1.1);    
+
+    }
+}
+
+#botonLeer2{
+    padding: 5px 22px;
+    margin: 0.5rem;
+    background-color: #009d4c;
+    color:#ffffff;
+    border-radius: 1.2rem;
+    border: none;
+    font-size:1rem;
+    text-decoration: none;
+    @include border-box;
+    &:hover{
+        background-color: #f3582b;
+        transform: scale(1.1);    
+    }
+}
+
+#botonLeer3{
+    background-color: #ffc800;
+    color:#ffffff;
+    border-radius: 1rem;
+    border: none;
+    font-size:1rem;
+    text-decoration: none;
+    @include border-box;
+    &:hover{
+        transform: scale(1.1);    
+
+    }
+}
+#boton-enviar{
+    padding: 10px ;
+    background-color: #a04ba2;
+    color:#ffffff;
+    border-radius: 1.2rem;
+    border: none;
+    font-size:1rem;
+    text-decoration: none;
+    &:hover{
+        background-color: #f3582b;
+        transform: scale(1.1);    
+    }
+}

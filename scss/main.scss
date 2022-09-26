@@ -1,0 +1,353 @@
+@import "utilities/animations";
+@import "utilities/botton";
+@import "utilities/componentes";
+@import "utilities/display";
+@import "utilities/otros";
+@import "utilities/textos";
+@import "utilities/variable";
+
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+/* CSS INDEX */
+
+/* css seccion principal*/
+.index{
+    .container-fluid{    
+         /* info */
+        .row.info{
+            @include titulo-h2-color1;
+            display: flex;
+            padding:3rem;
+            h3{
+                @include descrip-2-color;
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+        }
+    }
+    /* destacados */
+    /* cat niño niña */
+    .mainIndex{
+        @extend %d-flex;
+        text-align: center;         
+        /* cat principal */
+        .categoriaPrincipal{
+            @extend %d-flex;
+            background-color: $color-focus;
+            padding: $espacio-main;
+            width: $width-100;
+            .subtitulos{
+                @include titulo-h2-blanco;
+                padding-bottom: 2rem;
+            }
+            .img-cat{
+                a{
+                    img{
+                        max-width: $width-100;
+                        margin: $espacio-items;
+                    }
+                }
+            }
+        }
+         /* catalogo */
+        .productosDestacados{
+            .subtitulosColor{
+                @include titulo-h2-color1 ;
+                padding-top: $espacio-sec;
+            }
+            .container-fluid{
+                .row{
+                    .cajaProducto{
+                        transition: all 0.2s;
+                        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+                        background-color: $color-bg-productos;
+                        .cardbody{
+                            display: flex;
+                            flex-direction: column;
+                            .card-title{
+                                @include titulo-h2-color1;
+                            }
+                            .cardtext{
+                                @include descrip-2-negro;
+                            }
+                            h4{
+                                @include titulo-h2-color1;
+                                font-weight: bold;
+                            }
+                        }
+                        &:hover{
+                            transform: translateY(-15px);
+                            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+                        }
+                    }
+                }
+            }
+        }
+        
+        /* newsletter */
+        .newsletter{
+        background-color: #ffc800;
+        padding: 4rem;
+        width: $width-100;
+            .subtitulos{
+                @include titulo-h2-color2;
+                padding-bottom: $espacio-items;
+            }
+            .cajaForm{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                .fieldset{
+                    @extend %d-flex;
+                    @include descrip-2-negro;
+                    .email{
+                        label{
+                            margin: 2rem;
+                        }
+                    }
+                }
+            a{
+                    margin: 2rem;
+            }                
+            }
+        }       
+    }
+
+    /* logo wsp */
+    .logoWsp{
+        position: fixed;
+        bottom: $espacio-items;
+        right: $espacio-items;
+    }
+}
+
+/* CSS PRODUCTOS */
+
+.bodyProductos{  
+    .main-productos{
+       .productosDestacados{
+            margin: $espacio-main;
+            div{
+                .subtitulosColor{
+                    @include titulo-h2-color1 ;
+                }
+            }
+            .container-fluid{
+                .row{
+                    .cajaProducto{
+                        transition: all 0.2s;
+                        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+                        background-color: $color-bg-productos;
+                        .cardbody{
+                            display: flex;
+                            flex-direction: column;
+                            .card-title{
+                                @include titulo-h2-color1;
+                            }
+                            .cardtext{
+                                @include descrip-2-negro;
+                            }
+                            h4{
+                                @include titulo-h2-color1;
+                                font-weight: bold;
+                            }
+                        }
+                        &:hover{
+                            transform: translateY(-15px);
+                            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}  
+
+/* CSS TABLA DE TALLES */
+
+.cuerpo-tablas{
+    .tablas{
+        @extend %d-flex;
+        padding: $espacio-main;
+        align-items: flex-start;
+        
+        .tabla-nina{
+            @extend %animation-slide-in-left;
+            grid-area: tabla-nina;
+            img{
+                width: $width-100;
+
+            }
+        }
+        .tabla-nino{
+            @extend %animation-slide-in-right;
+            grid-area: tabla-nino;
+            img{
+                width: $width-100;
+            }
+        }
+        .img-sale{
+            grid-area: img-sale;
+            display: none;
+            text-align: center;
+            @media screen and (min-width:$vista-tablet){
+                display: block;
+            }
+            img{
+                width: $width-100;
+            }
+        }
+        @media screen and (min-width:$vista-tablet){
+            display: grid;
+            gap: 5rem;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto auto;
+            grid-template-areas: 
+                                "tabla-nina tabla-nino"
+                                "img-sale img-sale"
+            ;
+        }
+    }
+}
+
+/* CSS BLOG */
+
+body{
+    .mainBlog{
+        @extend %d-grid;
+        text-align: justify;
+        gap: $espacio-main;
+        margin: $espacio-main;
+        grid-template-columns: 1fr 0.5fr;
+        grid-template-rows: repeat(2, auto);
+        .noti1{
+            grid-column: 1/2;
+            background-color: $color-secundario;
+            padding: $espacio-sec;
+            border-radius: $border-radius;
+            .imgBlog1{
+                @include image;
+            }
+            .noticia1{
+                .tituloNota1{
+                    @include titulo-h2-blanco;
+                    text-align: start;
+                }
+                .descripcionNota1{
+                    @include descrip-1-blanco;
+                }
+            }
+        }
+        .masNoticias1{
+            grid-column: 2/3;
+            background-color: $color-bg_categorias;
+            height:fit-content;
+            border-radius: 0px 0px 0px 60px;
+            h4{
+                @include titulo-3;
+            }
+            nav{
+                padding: 1em;
+                ul{
+                    li{
+                        list-style: none;
+                        a{
+                            text-decoration: underline;
+                            color: $color-focus;
+                        }
+                    }
+                }
+            }
+        }
+        .otrasNoticias{
+            grid-column: 1/2;
+            display: flex;
+            flex-flow:  row wrap;
+            justify-content: space-between;
+            @media screen and (max-width:$vista-desktop){
+                flex-direction: column;
+            }
+            .card-noticias{
+                width: 45%;
+                margin-bottom: $espacio-items;
+                @media screen and (max-width:$vista-desktop){
+                    width: 100%;
+                }
+                img{
+                    @include image;
+                }
+                .noticia{
+                    padding-bottom: $espacio-sec;
+                    .tituloNota2{
+                        @include titulo-h2-color1;
+                        text-align: start;
+                    }
+                    .descripcionNota2{
+                        @include descrip-2-negro;
+                    }
+                }
+            }
+        }
+        .masNoticias2{
+            grid-column: 2/3;
+            background-color: $color-focus;
+            height:fit-content;
+            border-radius: 0px 0px 0px 60px;
+            h4{
+                @include titulo-3;
+                color: black;
+                background-color: $color-bg_categorias;
+            }
+            nav{
+                padding: 1em;
+                ul{
+                    li{
+                        list-style: none;
+                        a{
+                            text-decoration: underline;
+                            color: $color-bg_categorias;
+                        }
+                        p{
+                            color: $color-texto_blanco;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width:$vista-desktop){
+            display: flex;
+            flex-direction: column;        
+        }
+
+    }
+}
+
+
+/* CSS CONTACTO */
+
+body{
+    .container-contacto{
+        .row.contacto{
+            @include border-box;
+            border-radius: $border-radius;
+            background-color: $color-secundario;
+            padding:$espacio-main;
+            margin: $espacio-sec;
+            @media screen and (max-width:$vista-tablet){
+                margin: $espacio-items !important;
+                padding: $espacio-sec!important;
+            }
+        }
+        .row.map{
+            h2{
+                @include titulo-h2-color1;
+            }
+        }
+    }
+}
+
+
+
+
+    

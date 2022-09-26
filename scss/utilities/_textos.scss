@@ -1,0 +1,72 @@
+@import "utilities/variable";
+
+
+//titulos
+
+@mixin titulo-h1 {
+    background-color: $color-principal;
+    color: $color-texto_blanco;
+    font-size: 3em;
+    text-transform: uppercase;
+
+}
+
+@mixin titulo-h2-blanco {
+    color: $color-texto_blanco;
+    font-size: $fs-titulos;
+    text-align:center;
+    text-transform: uppercase;
+}
+
+@mixin titulo-h2-color1 {
+    font-size: $fs-titulos;
+    color: $color-secundario;
+    text-align:center;
+    text-transform: uppercase;
+}
+
+@mixin titulo-h2-color2 {
+    color: $color-focus;
+    font-size: $fs-titulos;
+    text-align:center;
+    text-transform: uppercase;
+}
+
+@mixin titulo-h2-color3 {
+    color: $color-bg_categorias;
+    font-size: $fs-titulos;
+    text-align:center;
+    text-transform: uppercase;
+}
+
+@mixin titulo-3 {
+    background-color: $color-focus;
+    color: $color-texto_blanco;
+    padding: 1rem 3em;
+    font-size: $fs-titulos;
+    text-align:center;
+    font-weight: bolder;
+
+}
+
+//descripciones
+
+@mixin descrip-1-blanco {
+    color: $color-texto_blanco;
+    font-size: $fs-descripciones;
+    text-align: justify;
+}
+
+@mixin descrip-2-negro {
+    color:black;
+    font-size: $fs-descripciones;
+    text-align: justify;
+}
+
+@mixin descrip-2-color {
+    color: $color-secundario;
+    font-size: $fs-descripciones;
+    text-align: center;
+}
+
+

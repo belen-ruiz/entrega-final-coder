@@ -1,0 +1,23 @@
+@mixin bc ($bc){
+    background-color: $bc;
+}
+
+@mixin padding ($padding-top, $padding-right, $padding-bottom, $padding-left, ){
+    padding-top: $padding-top;
+    padding-right: $padding-right;
+    padding-bottom: $padding-bottom;
+    padding-left: $padding-left;
+}
+
+
+@mixin border-box {
+    border-radius: 1.5rem;
+    box-shadow: 5px 5px 5px #00000066;    
+}
+
+
+@mixin image {
+    width: 100%;
+    margin-bottom: $espacio-items;
+}
+
